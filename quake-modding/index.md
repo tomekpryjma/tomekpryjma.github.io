@@ -3,8 +3,9 @@ layout: default
 title: Quake Modding
 ---
 
-## Write the first mod
+# Write the first mod
 <ul>
+    <li>Download the FTEQW [engine](https://www.fteqw.org/)</li>
     <li>Download the FTEQCC [compiler](https://www.fteqcc.org/)</li>
     <li>Download the Quake [source code](https://github.com/id-Software/quake-rerelease-qc)
         <ul>
@@ -13,6 +14,7 @@ title: Quake Modding
     </li>
     <li>Find your copy of Quake. For example, if you installed it via Steam, it will be in <strong>steamapps/common/Quake</strong>
         <ul>
+            <li>Place the FTEQW engine you downloaded earlier in this directory.</li>
             <li>In the main Quake directory, create a folder and name it whatever you want, let's use <strong>mymod</strong> as an example.</li>
             <li>In the mod folder create a <strong>src</strong> directory. Feel free to call it whatever you want.</li>
             <li>Copy the contents of <strong>C:/quake-source/quakec</strong> into <strong>mymod/src</strong></li>
@@ -46,9 +48,9 @@ title: Quake Modding
     <li>Switch to the rocket launcher and watch your rockets fly at a snail's pace!</li>
 </ul>
 
-## Issues I ran into
+# Issues I ran into
 
-### ex_bprint and other undefined things
+## ex_bprint and other undefined things
 I ran into the issue where, even though everything was compiling fine, when I launched the game and tried to play I got errors such as these:
 ```
 SV_ERROR:
@@ -58,4 +60,5 @@ HOST_ENDGAME:
 BUILTIN 0: EX_BPRINT NOT IMPLEMENTED
 MOD IS NOT COMPATIBLE.
 ```
-To fix this, I went into <strong>defs.qc</strong> and removed the code that looked like this: <code>:ex_bprint</code>, <code>:ex_centreprint</code>, <code>:ex_bprint</code>, <code>:ex_finaleFinished</code> etc. Basically anything that started with <code>:ex_</code> was removed. I compiled and could finally play the mod. Right now, I don't know if this has any other knock on effects but the stuff I deleted didn't occur in any other file other than <strong>defs.qc</strong>.
+To fix this, I downloaded the [latest FTEQW engine](https://www.fteqw.org/)
+<p>
